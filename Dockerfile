@@ -83,7 +83,7 @@ RUN curl -LO "http://central.maven.org/maven2/org/eclipse/jetty/jetty-distributi
 RUN mkdir -p /etc/default/
 ADD jetty /etc/default/
 ADD start.ini /var/lib/jetty/
-ADD webdefault.xml console-capture.xml jetty-jmx.xml jetty-jmx-remote.xml /var/lib/jetty/etc/
+ADD webdefault.xml console-capture.xml jetty-jmx.xml /var/lib/jetty/etc/
 
 # jetty debug settings.
 RUN sed -i -e 's/^RUN_ARGS=.*$/DEBUG_ARGS=(-Xdebug -agentlib:jdwp=transport=dt_socket,address=8585,server=y,suspend=n)\nRUN_ARGS=(\
